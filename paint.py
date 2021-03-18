@@ -34,16 +34,28 @@ def square(start, end):
     end_fill()
 
 def circle(start, end):
+    t = turtle.Turtle() 
     up()
     goto(start.x, start.y)
-    down()
+    
     begin_fill()
-
-    for count in range(50):
-        forward(end.x - start.x)
-        left(7.2)
-
+    radius = math.sqrt(((end.x - start.x)*(end.x - start.x))+((end.y - start.y)*(end.y - start.y)))
+    t.circle(radius)
+    down()
+    goto(end.x, end.y)
     end_fill()
+
+    #up()
+    #goto(start.x, start.y)
+    #down()
+    #begin_fill()
+
+    #for count in range(50):
+     #   forward(end.x - start.x)
+      #  left(7.2)
+
+    #end_fill()
+    ###################
     #up()
     #goto(start.x, start.y)
     
@@ -95,6 +107,10 @@ def tap(x, y):
 def store(key, value):
     "Store value in state at key."
     state[key] = value
+
+def star(start, end):
+    
+
 
 state = {'start': None, 'shape': line}
 setup(420, 420, 370, 0)
