@@ -109,8 +109,40 @@ def store(key, value):
     state[key] = value
 
 def star(start, end):
-    
+    up()
+    goto(start.x, start.y)
+    down()
+    turtle.penup()
+    turtle.setpos(start.x,start.y)
+    turtle.pendown()
+    for i in range(5):
+        turtle.forward(200)
+        turtle.right(144)
 
+def covid(start, end):
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+    contador=0
+    while True:
+        forward(end.x - start.x)
+        left(170)
+        contador=contador+1
+        if contador > 36:
+            break
+    end_fill()
+
+def clear_all ():
+    begin_fill('white')
+
+    for count in range(2):
+        forward(420)
+        left(90)
+        forward(420)
+        left(90)
+
+    end_fill('white')
 
 state = {'start': None, 'shape': line}
 setup(420, 420, 370, 0)
@@ -128,4 +160,7 @@ onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
 onkey(lambda: store('shape', rectangle), 'r')
 onkey(lambda: store('shape', triangle), 't')
+onkey(lambda: store('shape', star), 'e')
+onkey(lambda: store('shape', covid), 'p')
+onkey(lambda: store('shape', clear_all),'a')
 done()
