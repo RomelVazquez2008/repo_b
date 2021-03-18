@@ -8,10 +8,12 @@ Exercises
 5. Add width parameter.
 """
 import turtle
-from turtle import *
+from turtle import up, goto, down, begin_fill, \
+    forward, left, end_fill, onkey, done, setup,\
+    onscreenclick, listen, undo
 import math
-from math import sqrt
 from freegames import vector
+
 
 def line(start, end):
     "Draw line from start to end."
@@ -20,51 +22,29 @@ def line(start, end):
     down()
     goto(end.x, end.y)
 
+
 def square(start, end):
     "Draw square from start to end."
     up()
     goto(start.x, start.y)
     down()
     begin_fill()
-
     for count in range(4):
         forward(end.x - start.x)
         left(90)
-
     end_fill()
+
 
 def circle(start, end):
-    t = turtle.Turtle() 
+    t = turtle.Turtle()
     up()
     goto(start.x, start.y)
-    
     begin_fill()
-    radius = math.sqrt(((end.x - start.x)*(end.x - start.x))+((end.y - start.y)*(end.y - start.y)))
+    radius = ((end.x - start.x)*(end.x - start.x))
+    radius = radius + ((end.y - start.y)*(end.y - start.y))
+    radius = math.sqrt(radius)
     t.circle(radius)
-    down()
-    goto(end.x, end.y)
     end_fill()
-
-    #up()
-    #goto(start.x, start.y)
-    #down()
-    #begin_fill()
-
-    #for count in range(50):
-     #   forward(end.x - start.x)
-      #  left(7.2)
-
-    #end_fill()
-    ###################
-    #up()
-    #goto(start.x, start.y)
-    
-    #down()
-    #goto(end.x, end.y)
-
-    #radio=math.sqrt(((end.x - start.x)*(end.x - start.x))+((end.y - start.y)*(end.y - start.y))) 
-    #turtle.circle(radio)
-    
 
 
 def rectangle(start, end):
@@ -72,7 +52,6 @@ def rectangle(start, end):
     goto(start.x, start.y)
     down()
     begin_fill()
-
     for count in range(2):
         forward(end.x - start.x)
         left(90)
@@ -81,21 +60,21 @@ def rectangle(start, end):
 
     end_fill()
 
+
 def triangle(start, end):
     up()
     goto(start.x, start.y)
     down()
     begin_fill()
-
     for i in range(3):
         forward(end.x - start.x)
         left(120)
     end_fill()
 
+
 def tap(x, y):
     "Store starting point or draw shape."
     start = state['start']
-
     if start is None:
         state['start'] = vector(x, y)
     else:
@@ -104,46 +83,40 @@ def tap(x, y):
         shape(start, end)
         state['start'] = None
 
+
 def store(key, value):
     "Store value in state at key."
     state[key] = value
+
 
 def star(start, end):
     up()
     goto(start.x, start.y)
     down()
     turtle.penup()
-    turtle.setpos(start.x,start.y)
+    turtle.setpos(start.x, start.y)
     turtle.pendown()
     for i in range(5):
         turtle.forward(200)
         turtle.right(144)
+
 
 def covid(start, end):
     up()
     goto(start.x, start.y)
     down()
     begin_fill()
-    contador=0
+    contador = 0
     while True:
         forward(end.x - start.x)
         left(170)
-        contador=contador+1
+        contador = contador + 1
         if contador > 36:
             break
     end_fill()
 
-def clear_all ():
-    begin_fill('white')
 
-    for count in range(2):
-        forward(420)
-        left(90)
-        forward(420)
-        left(90)
-
-    end_fill('white')
-
+color = None
 state = {'start': None, 'shape': line}
 setup(420, 420, 370, 0)
 onscreenclick(tap)
@@ -152,9 +125,9 @@ onkey(undo, 'u')
 onkey(lambda: color('black'), 'K')
 onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
-onkey(lambda: color('blue'), 'B')   
+onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
-onkey(lambda: color('pink'), 'P') #nuevo color
+onkey(lambda: color('pink'), 'P')  # nuevo color
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
@@ -162,5 +135,4 @@ onkey(lambda: store('shape', rectangle), 'r')
 onkey(lambda: store('shape', triangle), 't')
 onkey(lambda: store('shape', star), 'e')
 onkey(lambda: store('shape', covid), 'p')
-onkey(lambda: store('shape', clear_all),'a')
 done()

@@ -1,8 +1,12 @@
-from random import *
-from turtle import *
+from random import shuffle
+from turtle import Turtle, up, goto, down, color,\
+    begin_fill, forward, left, end_fill, update, \
+    ontimer, clear, shape, stamp, write, setup,\
+    hideturtle, tracer, listen, addshape, onscreenclick,\
+    done
 from freegames import path
-
 import time
+
 
 car = path('car.gif')
 tiles = list(range(32)) * 2
@@ -11,6 +15,8 @@ hide = [True] * 64
 writer = Turtle(visible=False)
 counter = {'contador': 0}
 find = {'encontrados': 0}
+
+
 def square(x, y):
     "Draw white square with black outline at (x, y)."
     up()
@@ -23,13 +29,16 @@ def square(x, y):
         left(90)
     end_fill()
 
+
 def index(x, y):
     "Convert (x, y) coordinates to tiles index."
     return int((x + 200) // 50 + ((y + 200) // 50) * 8)
 
+
 def xy(count):
     "Convert tiles count to (x, y) coordinates."
     return (count % 8) * 50 - 200, (count // 8) * 50 - 200
+
 
 def tap(x, y):
     "Update mark and hidden tiles based on tap."
@@ -55,6 +64,7 @@ def tap(x, y):
             time.sleep(5)
             quit()
 
+
 def draw():
     "Draw image and tiles."
     clear()
@@ -72,9 +82,9 @@ def draw():
     if mark is not None and hide[mark]:
         x, y = xy(mark)
         up()
-        if (tiles[mark]<10):
+        if (tiles[mark] < 10):
             goto(x + 14, y + 2)
-        elif (tiles[mark]<20):
+        elif (tiles[mark] < 20):
             goto(x + 2, y + 2)
         else:
             goto(x + 4, y + 2)
@@ -83,6 +93,7 @@ def draw():
 
     update()
     ontimer(draw, 100)
+
 
 shuffle(tiles)
 setup(420, 440, 370, 0)
