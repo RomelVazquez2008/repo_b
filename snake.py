@@ -1,7 +1,8 @@
 from turtle import update, clear, ontimer, setup,\
     hideturtle, tracer, listen, onkey, done
-from random import randrange, random
+from random import randrange
 from freegames import square, vector
+import random
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
