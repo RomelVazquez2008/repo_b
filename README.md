@@ -1,2 +1,3 @@
 # repo_b
-mi repo y Leo
+Romel Aldair Vázquez Molina A01700519
+Leonardo Alvarado Menendez A01705998
