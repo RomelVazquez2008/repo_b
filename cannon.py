@@ -1,3 +1,6 @@
+#Modificaciones:
+#  -Mayor velocidad en los proyectiles
+#  -Reposicion de los balones al salir de la ventana
 from random import randrange
 from turtle import clear, goto, dot, update, ontimer,\
  setup, hideturtle, up, tracer, onscreenclick, done

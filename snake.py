@@ -1,3 +1,5 @@
+#Modificaciones:
+#   -Cambio de color serpiente y comida
 from turtle import update, clear, ontimer, setup,\
     hideturtle, tracer, listen, onkey, done
 from random import randrange

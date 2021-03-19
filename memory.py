@@ -1,3 +1,7 @@
+#Modificaciones:
+#   -Agrega contador de taps
+#   -Notifica cuando se completa el juego
+#   -Digito centrado al cuadro
 from random import shuffle
 from turtle import Turtle, up, goto, down, color,\
     begin_fill, forward, left, end_fill, update, \

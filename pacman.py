@@ -1,3 +1,7 @@
+#Modificaciones:
+#   -Mejora de velocidad en fantasmas
+#   -Nuevo laberinto
+
 from random import choice
 from turtle import Turtle, bgcolor, clear, up, goto, dot,\
     update, ontimer, setup, hideturtle, tracer, listen,\

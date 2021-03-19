@@ -7,6 +7,14 @@ Exercises
 4. Complete triangle.
 5. Add width parameter.
 """
+#Modificaciones:
+#   -Color nuevo
+#   -Dibuja Circulo
+#   -Dibuja rectangulo
+#   -Dibuja triangulo
+#   -Dibuja estrella
+#   -Dibuja covid
+#   -Limpia pantalla
 
 import turtle
 from turtle import up, goto, down, begin_fill, \
