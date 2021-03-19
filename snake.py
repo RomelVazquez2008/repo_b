@@ -11,6 +11,9 @@ COLORS = ['black', 'blue', 'green', 'pink', 'yellow']
 color_snake = random.choice(COLORS)
 color_food = random.choice(COLORS)
 
+while color_food==color_snake:
+    color_food = random.choice(COLORS)
+    
 
 def change(x, y):
     "Change snake direction."
