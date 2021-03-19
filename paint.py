@@ -10,7 +10,8 @@ Exercises
 import turtle
 from turtle import up, goto, down, begin_fill, \
     forward, left, end_fill, onkey, done, setup,\
-    onscreenclick, listen, undo
+    onscreenclick, listen, undo, clear,\
+    fillcolor
 import math
 from freegames import vector
 
@@ -57,7 +58,6 @@ def rectangle(start, end):
         left(90)
         forward(end.y - start.y)
         left(90)
-
     end_fill()
 
 
@@ -105,6 +105,7 @@ def covid(start, end):
     up()
     goto(start.x, start.y)
     down()
+    fillcolor('green')
     begin_fill()
     contador = 0
     while True:
@@ -114,7 +115,7 @@ def covid(start, end):
         if contador > 36:
             break
     end_fill()
-
+    
 
 color = None
 state = {'start': None, 'shape': line}
@@ -135,4 +136,5 @@ onkey(lambda: store('shape', rectangle), 'r')
 onkey(lambda: store('shape', triangle), 't')
 onkey(lambda: store('shape', star), 'e')
 onkey(lambda: store('shape', covid), 'p')
+onkey(clear, 'b')
 done()
