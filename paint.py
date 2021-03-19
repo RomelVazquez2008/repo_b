@@ -7,6 +7,7 @@ Exercises
 4. Complete triangle.
 5. Add width parameter.
 """
+
 import turtle
 from turtle import up, goto, down, begin_fill, \
     forward, left, end_fill, onkey, done, setup,\
@@ -135,6 +136,6 @@ onkey(lambda: store('shape', circle), 'c')
 onkey(lambda: store('shape', rectangle), 'r')
 onkey(lambda: store('shape', triangle), 't')
 onkey(lambda: store('shape', star), 'e')
-onkey(lambda: store('shape', covid), 'p')
+onkey(lambda: store('shape', covid), 'o')
 onkey(clear, 'b')
 done()
