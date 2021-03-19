@@ -115,7 +115,7 @@ def covid(start, end):
         if contador > 36:
             break
     end_fill()
-    
+
 
 color = None
 state = {'start': None, 'shape': line}
